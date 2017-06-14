@@ -1,1 +1,3 @@
-# jenkins-slave-docker-python
+# jenkins-jnlp-docker-python
+
+An alpine based JNLP jenkins slave with python, docker and kubectl installed.
