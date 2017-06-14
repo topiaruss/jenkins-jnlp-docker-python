@@ -6,7 +6,8 @@ ca-certificates \
 curl \
 openssl \
 python \
-py-pip
+py-pip \
+py-yaml
 
 ENV DOCKER_BUCKET get.docker.com
 ENV DOCKER_VERSION 17.04.0-ce
