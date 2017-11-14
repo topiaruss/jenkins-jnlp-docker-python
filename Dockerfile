@@ -9,14 +9,14 @@ python \
 py-pip \
 py-yaml
 
-ENV DOCKER_BUCKET get.docker.com
-ENV DOCKER_VERSION 17.04.0-ce
-ENV DOCKER_SHA256 c52cff62c4368a978b52e3d03819054d87bcd00d15514934ce2e0e09b99dd100
+ENV DOCKER_BUCKET download.docker.com
+ENV DOCKER_VERSION 17.09.0-ce
+ENV DOCKER_SHA256 a9e90a73c3cdfbf238f148e1ec0eaff5eb181f92f35bdd938fd7dab18e1c4647
 
 RUN set -x \
-&& curl -fSL "https://${DOCKER_BUCKET}/builds/Linux/x86_64/docker-${DOCKER_VERSION}.tgz" -o docker.tgz \
-&& echo "${DOCKER_SHA256} *docker.tgz" | sha256sum -c - \
-&& tar -xzvf docker.tgz \
+&& curl -fSL "https://${DOCKER_BUCKET}/linux/static/stable/x86_64/docker-${DOCKER_VERSION}.tgz" -o docker.tgz \
+&& echo "${DOCKER_SHA256} docker.tgz" | sha256sum -c - \
+&& tar -xzf docker.tgz \
 && mv docker/* /usr/local/bin/ \
 && rmdir docker \
 && rm docker.tgz \
