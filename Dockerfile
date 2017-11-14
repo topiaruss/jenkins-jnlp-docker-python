@@ -1,7 +1,7 @@
 FROM jenkinsci/slave:alpine
 
 USER root
-RUN apk add --no-cache \
+RUN apk add --upgrade --no-cache \
 ca-certificates \
 curl \
 openssl \
