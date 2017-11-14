@@ -15,7 +15,7 @@ ENV DOCKER_SHA256 a9e90a73c3cdfbf238f148e1ec0eaff5eb181f92f35bdd938fd7dab18e1c46
 
 RUN set -x \
 && curl -fSL "https://${DOCKER_BUCKET}/linux/static/stable/x86_64/docker-${DOCKER_VERSION}.tgz" -o docker.tgz \
-&& echo "${DOCKER_SHA256} docker.tgz" | sha256sum -c - \
+&& echo "${DOCKER_SHA256} *docker.tgz" | sha256sum -c - \
 && tar -xzf docker.tgz \
 && mv docker/* /usr/local/bin/ \
 && rmdir docker \
